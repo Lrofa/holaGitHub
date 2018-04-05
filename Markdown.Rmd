@@ -1,0 +1,36 @@
+---
+title: "Actividad 5, RMarkdown"
+author: "Micaela Echeverria, Luciabril Rodriguez"
+date: "2 de abril de 2018"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Incluir Imagen
+
+
+ ![](Dog-studying.jpg)
+ 
+Nos gusta esta imagen porque amamos los perros y nos Elegimos esta impagen porque amamos a los perros y nos pareció divertida.
+
+## Chunck con código de R
+
+```  {r, echo =TRUE, fig.width = 5, fig.height = 5}
+
+library(ggplot2)
+  ggplot(data=mpg, aes(x=hwy, y=cty))+
+  geom_point()+
+  theme(aspect.ratio= 1)+
+  labs(x= "Millas por galon en carretera", y= "Millas por galon en ciudad", title= "scatter millas por galon en carretera vs millas por galon en ciudad")
+
+```
+
+## Incluir Tabla
+``` {r, echo= TRUE, results= "asis"}
+library(xtable)
+xtable(mpg[1:5,1:5])
+
+```
